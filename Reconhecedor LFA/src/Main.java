@@ -6,8 +6,8 @@ public class Main {
 		Scanner s = new Scanner(System.in);
 		
 		String frase ;
-		String frase2;
 		double num;
+		String linha = "---------------------";
 		
 		String pv[] = {"private", "public", "if", "else", "try"};
 		
@@ -18,9 +18,8 @@ public class Main {
 		System.out.println("Informe um numero:");
 		num = s.nextDouble();	
 		
-		
+		System.out.println(linha+"Informando palavra(s) e numero(s) inseridos!"+ linha);
 		System.out.println("\n" + frase + "\n");
-		
 		System.out.println(num + "\n");
 		
 		//Verificar frase
@@ -48,6 +47,9 @@ public class Main {
 			}
 		}
 		
+		
+		System.out.println(linha+"Reconhecendo e informando o Literal inserido (String ou Char)"+ linha);
+
 		if(k == 0 ) {
 			System.out.println("ERRO: Nao há String!");
 		}else {
@@ -77,6 +79,8 @@ public class Main {
 				}
 		}
 		
+		System.out.println(linha+"Reconhecendo o tipo do número inserido (Real ou Inteiro)"+ linha);
+		
 		if(w == 0) {
 			System.out.println("O numero inserido é INTEIRO!");
 		}else {
@@ -90,6 +94,7 @@ public class Main {
 			}
 		}
 		
+		System.out.println(linha+"Reconhecendo o tipo String inserido (Nome ou Palavra-Chave/Comando)"+ linha);
 		if(p == 0 ) {
 			System.out.println("É um nome!");
 		}else {
