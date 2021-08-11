@@ -5,7 +5,9 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		
-		String frase ;
+		String frase, sc, so, ifs ,la;
+		String scan = "Scanner scan = new Scanner(System.in);";
+		String print = "System.out.println()";
 		double num;
 		String linha = "---------------------";
 		
@@ -39,27 +41,30 @@ public class Main {
 			
 			if(c == '\'') {
 				for (int j = i+1; j < frase.length(); j++) {
-					char a = frase.charAt(j);
-					if(a == '\'') {
+					char b = frase.charAt(j);
+					if(b == '\'') {
 						o++;
 					}
 				}
 			}
 		}
 		
-		
 		System.out.println(linha+"Reconhecendo e informando o Literal inserido (String ou Char)"+ linha);
 
 		if(k == 0 ) {
 			System.out.println("ERRO: Nao há String!");
-		}else {
+		}else if(k % 2 == 1 ){
 			System.out.println("Há frase(s), (String)!");
+		}else {
+			System.out.println("ERRO no reconhecimento da String: Nao há String!");
 		}
 		
 		if(o == 0 ) {
 			System.out.println("ERRO: Nao há char!");
-		}else {
+		}else if (o % 2 == 1){
 			System.out.println("Há letra(s), (char)!");
+		}else {
+			System.out.println("ERRO no reconhecimento do Char: Nao há Char!");
 		}
 		
 		//Verificar numero
@@ -86,7 +91,7 @@ public class Main {
 		}else {
 			System.out.println("O numero inserido é REAL!");
 		}
-		//Verificar palavar se é uma nome ou uma palavra reservada
+		//Verificar palavra se é uma nome ou uma palavra reservada
 		int p = 0;
 		for (int i = 0; i < pv.length; i++) {
 			if(frase.toLowerCase().contains(pv[i])) {
@@ -100,5 +105,46 @@ public class Main {
 		}else {
 			System.out.println("É uma palavra chave!");
 		}
+		
+		s.nextLine();
+		System.out.println(linha+"Reconhecendo comandos  "+ linha);
+		
+		
+		System.out.println("\nInforme o comando de leitura: ");
+		sc = s.nextLine();
+		
+		if(sc.toLowerCase().contains(scan.toLowerCase())) {
+			System.out.println("Comando de leitura correto! ");
+		}else {
+			System.out.println("Comando de leitura incorreto! ");
+		}
+		
+		System.out.println("\nInforme o comando de apresentação na tela: ");
+		so = s.nextLine();
+		
+		if(so.toLowerCase().contains(print.toLowerCase())) {
+			System.out.println("Comando de  apresentação na tela correto! ");
+		}else {
+			System.out.println("Comando de  apresentação na tela incorreto! ");
+		}
+		
+		System.out.println("\nInforme o comando de comparação: ");
+		ifs = s.nextLine();
+		
+		if(ifs.toLowerCase().contains("if")) {
+			System.out.println("Comando de  comparação correto! ");
+		}else {
+			System.out.println("Comando de  comparação incorreto! ");
+		}
+		
+		System.out.println("\nInforme o comando de laço: ");
+		la = s.nextLine();
+		
+		if(la.toLowerCase().contains("while")) {
+			System.out.println("Comando de laço correto! ");
+		}else {
+			System.out.println("Comando de laço incorreto! ");
+		}
+		
 	}
 }
